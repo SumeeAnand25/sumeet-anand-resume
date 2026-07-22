@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sumeet Anand - Resume</title>
+<style>
+  :root {
+    --primary: #1E293B;       /* Deep Slate Blue */
+    --secondary: #3B82F6;     /* Accent Blue */
+    --bg-light: #F8FAFC;      /* Light Blue-Grey Card Background */
+    --text-main: #334155;     /* Dark Charcoal for readability */
+    --text-muted: #64748B;    /* Muted Slate Grey */
+    --border: #E2E8F0;       /* Soft Border */
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--text-main);
+    line-height: 1.5;
+    margin: 0;
+    padding: 20px;
+    background: #FFF;
+  }
+
+  /* Header */
+  .header {
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+  }
+  .header h1 {
+    font-size: 24pt;
+    color: var(--primary);
+    margin: 0 0 5px 0;
+    letter-spacing: -0.5px;
+  }
+  .header .subtitle {
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--secondary);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .header .contact-bar {
+    font-size: 9.5pt;
+    color: var(--text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+    align-items: center;
+  }
+  .header .contact-bar a {
+    color: var(--secondary);
+    text-decoration: none;
+  }
+
+  /* Two Column Layout (Default Desktop) */
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  .sidebar {
+    flex: 0 0 32%;
+    max-width: 32%;
+  }
+
+  .main-content {
+    flex: 1;
+  }
+
+  /* Typography & Headings */
+  h2 {
+    font-size: 11pt;
+    text-transform: uppercase;
+    color: var(--primary);
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 4px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Sidebar Highlight Cards */
+  .card {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  /* Certifications Badges */
+  .cert-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 9pt;
+  }
+  .cert-icon {
+    color: var(--secondary);
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  /* Lists & Skills */
+  ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+  li {
+    font-size: 9pt;
+    margin-bottom: 6px;
+  }
+  .skill-group {
+    margin-bottom: 12px;
+  }
+  .skill-title {
+    font-weight: bold;
+    font-size: 9.5pt;
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+
+  /* Main Content Work Experience */
+  .job {
+    margin-bottom: 20px;
+  }
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .job-title {
+    font-weight: bold;
+    font-size: 10.5pt;
+    color: var(--primary);
+  }
+  .company {
+    color: var(--secondary);
+    font-weight: 600;
+  }
+  .date {
+    font-size: 8.5pt;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .job-role {
+    font-style: italic;
+    font-size: 9pt;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+
+  /* Tags/Highlights */
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .pill {
+    background: #EFF6FF;
+    color: #1E40AF;
+    font-size: 8pt;
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid #BFDBFE;
+  }
+
+  /* RESPONSIVE MEDIA QUERIES */
+
+  /* Tablets and Mobile Devices */
+  @media screen and (max-width: 850px) {
+    body {
+      padding: 15px;
+    }
+
+    .container {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .sidebar, 
+    .main-content {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+
+    /* Move sidebar below summary on mobile for better reading flow */
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header h1 {
+      font-size: 20pt;
+    }
+
+    .header .subtitle {
+      font-size: 10pt;
+    }
+
+    .job-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .date {
+      margin-bottom: 4px;
+    }
+  }
+
+  /* Print Stylesheet Optimization */
+  @media print {
+    body {
+      padding: 0;
+      background: #FFF;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+    }
+    .sidebar {
+      flex: 0 0 32%;
+      max-width: 32%;
+    }
+    .card {
+      break-inside: avoid;
+    }
+    .job {
+      break-inside: avoid;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>SUMEET ANAND</h1>
+    <div class="subtitle">SAP S/4HANA Sales & Advanced ATP Team Lead (Specialist)</div>
+    <div class="contact-bar">
+      <span>Solution Design | Global SAP Transformations | SAP Business AI Certified | SAP Fiori | OData | SAP Activate</span>
+      <span>📧 anandsumeet57@gmail.com</span>
+      <span>📞 +91-9088508621</span>
+      <span>📍 Kolkata, India</span>
+      <span>🔗 <a href="https://www.linkedin.com/in/sumeet-anand-sap-sd-aatp-specialist/">LinkedIn Profile</a></span>
+    </div>
+  </div>
+
+  <div class="container">
+    
+    <!-- LEFT COLUMN (Sidebar & Highlights) -->
+    <div class="sidebar">
+      
+      <!-- SKILLS CARD -->
+      <div class="card">
+        <h2>Skills & Expertise</h2>
+        
+        <div class="skill-group">
+          <div class="skill-title">SAP Functional</div>
+          <ul>
+            <li><strong>SAP advanced ATP:</strong> Product Availability Check (PAC), Product Allocation, Backorder Processing (BOP), Interactive Backorder Processing (iBOP), Alternative Based Confirmation (ABC), Supply Protection (SuP), Business Process Scheduling (BPS), Release for Delivery (RfD), RFP & Explore phases, 1P/3P system integration.</li>
+            <li><strong>SAP SD:</strong> Order-to-Cash, FDS design, Route Determination & Output Management Configuration, EDI/IDoc, testing (FUT, SIT, UAT), SAP Activate methodology (Explore, Realize, Deploy & Run) in S/4HANA Cloud (Public & Private).</li>
+            <li><strong>SAP LE:</strong> Sales & logistics configuration, EDI/IDoc integration, rollout & go-live.</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-title">SAP Technical</div>
+          <ul>
+            <li>ABAP (ALV reports, SmartForms, BADI/BAPI), Adobe Forms, TMG</li>
+            <li>Data migration using LSMW, LTMC, and custom programs</li>
+            <li>Core Data Services (CDS) Views & OData service development</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-title">Frontend & Integration</div>
+          <ul>
+            <li>SAP Fiori/UI5 custom app development</li>
+            <li>SAP Cloud Connector, SAP Gateway, and OData Service Provisioning</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-title">Automation & AI</div>
+          <ul>
+            <li><strong>RPA Tools:</strong> Automation Anywhere (Advanced), SAP iRPA, Blue Prism, UI Path</li>
+            <li><strong>AI/ML:</strong> Python-based workflows, data pipelines, process intelligence</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-title">Other Tools</div>
+          <ul>
+            <li><strong>Web:</strong> HTML5, JS, PHP, MySQL</li>
+            <li><strong>Dashboards:</strong> Google Data Studio, Excel (VBA), Power BI</li>
+            <li><strong>Design:</strong> Photoshop, Illustrator, CorelDRAW</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS CARD WITH ICONS -->
+      <div class="card">
+        <h2>Certifications</h2>
+        <div class="cert-item"><span class="cert-icon">🏅</span> <span>SAP Certified - SAP S/4HANA Cloud Private Edition - Sales</span></div>
+        <div class="cert-item"><span class="cert-icon">🏅</span> <span>SAP Certified - Positioning SAP Business AI Solutions as Part of SAP Business Suite</span></div>
+        <div class="cert-item"><span class="cert-icon">🏅</span> <span>SAP Certified - Positioning the Autonomous Enterprise</span></div>
+        <div class="cert-item"><span class="cert-icon">🏅</span> <span>SAP Certified - SAP Generative AI Developer</span></div>
+        <div class="cert-item"><span class="cert-icon">🏅</span> <span>Automation Anywhere Certified - Advanced Developer</span></div>
+      </div>
+
+      <!-- EDUCATION CARD -->
+      <div class="card">
+        <h2>Education</h2>
+        <div style="margin-bottom: 8px;">
+          <strong>M.Sc. (Information Systems)</strong><br>
+          <small>BITS Pilani | 8.19 CGPA (2022)</small>
+        </div>
+        <div>
+          <strong>BCA (Artificial Intelligence)</strong><br>
+          <small>WBUT (NSHM) | 8.55 CGPA (2018)</small>
+        </div>
+      </div>
+
+      <!-- PROJECT / CLIENT HIGHLIGHTS CARD -->
+      <div class="card">
+        <h2>Client Highlights</h2>
+        <div class="pills">
+          <span class="pill">Bekaert</span>
+          <span class="pill">Infineum</span>
+          <span class="pill">Google Devices & Services</span>
+          <span class="pill">Renesas Electronics</span>
+          <span class="pill">Stericycle</span>
+          <span class="pill">Vifor Pharm</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN (Main Content) -->
+    <div class="main-content">
+      
+      <!-- SUMMARY CARD -->
+      <div class="card" style="background: #FFF; border-left: 4px solid var(--secondary);">
+        <h2>Professional Summary</h2>
+        <p style="font-size: 9.5pt; margin: 0;">
+          SAP S/4HANA SD & Advanced ATP Team Lead (Specialist) with 8+ years of consulting experience delivering enterprise-scale SAP transformations across the manufacturing, specialty chemicals, and technology sectors. Proven expertise in leading end-to-end SAP S/4HANA implementations, from client workshops and solution design through configuration, testing, Go-Live, Hypercare, and Post-Go-Live Support.
+        </p>
+        <p style="font-size: 9.5pt; margin: 8px 0 0 0;">
+          Specialized in SAP Advanced ATP, including Product Availability Check (PAC), Product Allocation (PAL), Interactive Backorder Processing (iBOP), Supply Protection (SuP), Alternative-Based Confirmation (ABC), Business Process Scheduling (BPS), and Release for Delivery (RfD).
+        </p>
+        <p style="font-size: 9.5pt; margin: 8px 0 0 0;">
+          Combines deep functional consulting expertise with strong technical capabilities in SAP Fiori, SAPUI5, OData, ABAP, SAP APIs, and SAP Business AI to deliver scalable, business-driven solutions. Experienced in stakeholder management, solution architecture, technical feasibility assessments, and leading cross-functional teams in global SAP transformation programs.
+        </p>
+      </div>
+
+      <!-- EXPERIENCE SECTION -->
+      <div class="card" style="background: #FFF;">
+        <h2>Professional Experience</h2>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title"><span class="company">Accenture</span> | Specialist – Team Lead</span>
+            <span class="date">Jan 2026 – Present</span>
+          </div>
+          <div class="job-role">SAP SD & aATP Consultant</div>
+          <ul>
+            <li>Led end-to-end SAP S/4HANA aATP implementations from Explore through Go-Live, Hypercare, and Post-Go-Live Support.</li>
+            <li>Conducted client workshops, requirement gathering, fit-gap analysis, and solution design sessions.</li>
+            <li>Led the functional design and end-to-end delivery of a custom SAP Fiori Order Due List (ODL) application by conducting business workshops, gathering requirements, evaluating SAP standard APIs, performing technical feasibility assessments, preparing Functional Specifications, supporting development, and coordinating SIT, UAT, deployment, and Hypercare activities.</li>
+            <li>Mapped ECC and SAP APO Scope of Check to SAP S/4HANA Product Availability Check (PAC).</li>
+            <li>Designed and implemented custom Fiori App replacing APOs Order Due List for Order Confirmation (SO and STO) and communication between sales and planning team.</li>
+            <li>Coordinated cross-functional teams comprising business stakeholders, solution architects, ABAP developers, and Basis consultants throughout the implementation lifecycle.</li>
+            <li>Mentored three SAP consultants and reviewed functional deliverables.</li>
+            <li>Authored Configuration Documents, Functional Specifications, Technical Design Documents, Test Scripts, and Training Material.</li>
+            <li>Supported deployment planning, production stabilization, Hypercare, and defect resolution activities following Go-Live.</li>
+            <li>Delivered stable implementation with only 36 reported aATP defects, approximately 90% related to user understanding rather than application defects.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title"><span class="company">Accenture</span> | Sr. Analyst</span>
+            <span class="date">Jan 2024 – Dec 2025</span>
+          </div>
+          <div class="job-role">SAP SD & aATP Consultant</div>
+          <ul>
+            <li>Designed and implemented scalable SAP Advanced ATP solutions to optimize order fulfillment, improve confirmation accuracy, and reduce processing latency.</li>
+            <li>Facilitated Explore phase workshops to gather business requirements and define the future-state SAP Advanced ATP solution.</li>
+            <li>Configured and implemented SAP Advanced ATP capabilities including Product Availability Check (PAC), Product Allocation (PAL), Interactive Backorder Processing (iBOP), Supply Protection (SuP), Business Process Scheduling (BPS), and Alternative-Based Confirmation (ABC).</li>
+            <li>Implemented Business Process Scheduling (BPS) with delegation features, improving system flexibility.</li>
+            <li>Led technical initiatives to minimize technical debt & improve developer experience.</li>
+            <li>Explored AI-driven automation opportunities to optimize ATP validation and demand planning processes.</li>
+            <li>Led System Integration Testing (SIT), coordinated defect resolution with cross-functional teams, and successfully completed the testing phase within project timelines.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title"><span class="company">Deloitte USI</span> | Analyst</span>
+            <span class="date">Jun 2021 – Jan 2024</span>
+          </div>
+          <div class="job-role">SAP SD & LE Consultant</div>
+          <ul>
+            <li>Developed and optimized SD workflows, enhancing order-to-cash processes.</li>
+            <li>Designed and enhanced multiple EDI/IDoc interfaces, including EDI 850, 855, 940, and 945, incorporating custom enhancements and additional IDoc segments to meet business requirements.</li>
+            <li>Enhanced the core 4PL order confirmation interface by resolving production issues, implementing enhancements, and delivering new business requirements.</li>
+            <li>Implemented SAP Intelligent RPA solutions to automate repetitive order processing activities and reduce manual effort.</li>
+            <li>Designed scalable system architecture for third-party logistics integration.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title"><span class="company">Deloitte USI</span> | Associate Analyst</span>
+            <span class="date">Sept 2018 – May 2021</span>
+          </div>
+          <div class="job-role">SAP ABAP Consultant</div>
+          <ul>
+            <li>Developed custom SAP solutions including ALV Reports, BADI, and BAPI integrations.</li>
+            <li>Developed and enhanced Adobe Forms supporting business operations across 15+ countries, including multilingual translations and localization requirements.</li>
+            <li>Led data migration projects using LSMW, LTMC & custom reports.</li>
+            <li>Implemented automated testing frameworks to improve system stability.</li>
+          </ul>
+        </div>
+
+        <div class="job" style="margin-bottom: 0;">
+          <div class="job-header">
+            <span class="job-title"><span class="company">Global Computer Solutions</span> | Web Developer (Intern)</span>
+            <span class="date">Jan 2017 – July 2017</span>
+          </div>
+          <div class="job-role">Web Designer/Developer</div>
+          <ul>
+            <li>Built dynamic web applications using PHP, JavaScript, and MySQL.</li>
+            <li>Designed interactive dashboards & real-time data visualizations.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
